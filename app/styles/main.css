@@ -1,0 +1,148 @@
+body {
+  padding: 0;
+  font-size: 14px;
+  background-color: #f1f1f1;
+  max-height: 100vh;
+}
+
+.header{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.media-left-pane {
+  width: 100%;
+}
+
+.popup-player {
+  z-index: 10;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: solid 1px #bbb;
+  padding: 20px;
+  background-color: white;
+  margin: 0 10px;
+}
+
+.popup-player audio {
+  width : 100%;;
+}
+
+.media-form {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.media-input, .media-btn {
+  display: block;
+  margin: 15px;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.media-btn {
+  height: 36px;
+}
+
+.media-list, .media-album-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.media-album-list {
+  margin: 10px;
+}
+
+.media-album-title {
+  margin: 0 10px;
+}
+
+.media-album-results {
+  padding-top: 5px;
+}
+
+.media-results {
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid transparent;
+  border-bottom: 1px solid gray;
+  cursor: pointer;
+  background-color: lightgray;
+}
+
+.media-selected {
+  border: 1px solid gray;
+  background-color: darkgray;
+}
+
+.media-artwork, .media-details {
+  display: inline-block;
+}
+
+.media-artwork {
+  width: 25%;
+}
+
+.media-details {
+  width: 70%;
+}
+
+.media-trackTitle {
+  font-size: 1.2em;
+}
+
+.media-artistName {
+  font-size: 1.1em;
+}
+
+.media-collectionName {
+  font-size: 1em;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .media-left-pane {
+    width: 30%;
+    display: inline;
+    float: left;
+  }
+
+  .media-right-pane {
+    width: 70%;
+    float: right;
+  }
+
+  /* Remove the padding we set earlier */
+  .header {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+
+  .media-player {
+    margin-left: 10px;
+    border: 1px solid gray;
+    width: 300px;
+  }
+
+  .media-details > * {
+    padding: 5px 0;
+  }
+
+  .media-list, .media-album-list {
+    max-height: 400px;
+    overflow: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 10px;
+  }
+}

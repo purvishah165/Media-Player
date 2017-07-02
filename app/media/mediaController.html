@@ -1,0 +1,52 @@
+<div class="media">
+  <div class="media-left-pane">
+    <form class="media-form">
+      <input type="text" ng-model="mediaCtrl.searchTerm" ng-disabled="mediaCtrl.searching" class="media-input"
+             placeholder="Search Artist">
+      <button class="media-btn" ng-click="mediaCtrl.searchMedia()">Search</button>
+    </form>
+
+
+    <div ng-show="mediaCtrl.mediaResults.length > 0">
+      <ul class="media-list">
+        <li class="media-results" ng-repeat="media in mediaCtrl.mediaResults" ng-click="mediaCtrl.playMedia(media)"
+            ng-class="{'media-selected': media.isSelected}">
+          <img class="media-artwork" ng-src="{{media.artworkUrl60}}"/>
+          <div class="media-details">
+            <div class="media-trackTitle" ng-bind="(media.trackName || media.collectionName)" tooltip="{{media.trackName}}"></div>
+            <div class="media-artistName" ng-bind="media.artistName"></div>
+            <div class="media-collectionName">
+              <small ng-bind="media.collectionName"></small>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="popup-player" ng-if="mediaCtrl.showMedia">
+        <div>
+          <div>{{mediaCtrl.title}}</div>
+          <small>by <cite>{{mediaCtrl.artist}}</cite></small>
+        </div>
+        <audio type="audio/mp3" autoplay ng-src="{{mediaCtrl.previewUrl}}" width="320" height="240" controls></audio>
+      </div>
+    </div>
+  </div>
+
+  <div class="media-right-pane" ng-if="mediaCtrl.showAlbumDetails">
+
+    <div ng-show="mediaCtrl.albumResults.length > 0">
+      <div class="media-player">
+        <div class="media-artwork"><img ng-src="{{mediaCtrl.albumDetails.artworkUrl100}}"/></div>
+        <audio type="audio/mp3" ng-src="{{mediaCtrl.previewUrl}}" controls></audio>
+      </div>
+      <div class="media-album-title media-trackTitle">Album Name:- {{mediaCtrl.albumName}}</div>
+      <ul class="media-album-list">
+        <li class="media-album-results" ng-repeat="media in mediaCtrl.albumResults" ng-if="media.wrapperType === 'track'">
+          <div class="media-album-details">
+            <div class="media-collectionName media-album-trackTitle" ng-bind="media.trackName"></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>
