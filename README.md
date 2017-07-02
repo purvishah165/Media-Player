@@ -6,4 +6,4 @@ This is a music player project which gives options to search for audio songs and
 
 Run `grunt serve` for preview and `grunt build` for a production build and deploy.
 
-Note: Run 'npm install' and 'bower install' to download the dependencies before first build/preview.
+Note: Run `npm install` and `bower install` to download the dependencies before first build/preview.
